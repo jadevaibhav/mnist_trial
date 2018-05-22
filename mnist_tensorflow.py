@@ -71,7 +71,7 @@ def convolutional_neural_network(x):
     #print(output.shape)
     return output
 
-def train_neural_network():
+def train_neural_network(x):
     prediction = convolutional_neural_network(x)
     print('check here..'+str(prediction.shape)+'')
     cost = tf.reduce_mean( tf.losses.softmax_cross_entropy(onehot_labels=y,logits=prediction) )
@@ -97,4 +97,4 @@ def train_neural_network():
         #accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
         #print('Accuracy:',accuracy.eval({x:x_val, y:y_val}))
 
-train_neural_network()
+train_neural_network(x)
